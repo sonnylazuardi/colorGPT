@@ -43,6 +43,7 @@
     "socket.io-client": "^2.3.0",
     "typescript": "^3.4.5"
   },
+  "repository": "https://github.com/sonnylazuardi/color-copy-paste",
   "author": "Sonny Lazuardi Hermawan <sonnylazuardi@gmail.com>",
   "browserslist": {
     "production": [
