@@ -1,0 +1,25 @@
+{
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "commands": [
+    {
+      "name": "🎨 Color Copy Paste",
+      "identifier": "sketchreact.color",
+      "script": "./plugins/ColorCopy.js",
+      "handlers": {
+        "run": "onRun",
+        "actions": {
+          "Shutdown": "onShutdown"
+        }
+      }
+    }
+  ],
+  "description": "Copy paste color directly from your phone's camera",
+  "icon": "icon.png",
+  "menu": {
+    "title": "🎨 Color Copy Paste",
+    "items": [
+      "sketchreact.color"
+    ]
+  }
+}

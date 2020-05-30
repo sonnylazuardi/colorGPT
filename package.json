@@ -1,0 +1,60 @@
+{
+  "name": "color-copy-paste",
+  "version": "0.1.0",
+  "engines": {
+    "sketch": ">=3.0"
+  },
+  "skpm": {
+    "name": "Color Copy Paste",
+    "manifest": "src/manifest.json",
+    "main": "color-copy-paste.sketchplugin",
+    "assets": [
+      "assets/**/*"
+    ],
+    "sketch-assets-file": "sketch-assets/icons.sketch"
+  },
+  "scripts": {
+    "dev": "sh scripts/dev.sh",
+    "build": "sh scripts/build.sh"
+  },
+  "devDependencies": {
+    "@skpm/builder": "^0.5.11",
+    "@skpm/extract-loader": "^2.0.2",
+    "css-loader": "^1.0.0",
+    "html-loader": "^0.5.1"
+  },
+  "resources": [
+    "resources/**/*.js"
+  ],
+  "dependencies": {
+    "@types/jest": "^24.0.12",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.8.16",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-router-dom": "^4.3.3",
+    "framer-motion": "^1.11.0",
+    "qrcode.react": "^1.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-figma-plugin-ds": "^1.0.3",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^3.0.0",
+    "sketch-module-web-view": "3.4.1",
+    "socket.io-client": "^2.3.0",
+    "typescript": "^3.4.5"
+  },
+  "author": "Sonny Lazuardi Hermawan <sonnylazuardi@gmail.com>",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "homepage": "."
+}

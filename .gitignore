@@ -1,0 +1,26 @@
+# build artefacts
+color-copy-paste.sketchplugin
+
+# npm
+node_modules
+.npm
+npm-debug.log
+
+# mac
+.DS_Store
+
+# WebStorm
+.idea
+
+# sketch
+# sketch-assets
+
+build
+resources/static
+resources/precache-manifest.*
+resources/asset-manifest.json
+resources/index.html
+resources/service-worker.js
+*.sketchplugin
+
+dist
