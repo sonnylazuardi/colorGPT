@@ -1,6 +1,3 @@
-# build artefacts
-color-copy-paste.sketchplugin
-
 # npm
 node_modules
 .npm

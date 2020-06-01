@@ -15,7 +15,8 @@
   },
   "scripts": {
     "dev": "sh scripts/dev.sh",
-    "build": "sh scripts/build.sh"
+    "build": "sh scripts/build.sh",
+    "clean": "sh scripts/clean.sh"
   },
   "devDependencies": {
     "@skpm/builder": "^0.5.11",
