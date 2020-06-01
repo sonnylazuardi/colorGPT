@@ -4,14 +4,5 @@
     <item>
       <enclosure url="https://github.com/sonnylazuardi/color-copy-paste/releases/download/v4.0.0/color-copy-paste.sketchplugin.zip" sparkle:version="4.0.0"/>
     </item>
-    <item>
-      <enclosure url="https://github.com/sonnylazuardi/color-copy-paste/releases/download/v3.0.0/color-copy-paste.sketchplugin.zip" sparkle:version="3.0.0"/>
-    </item>
-    <item>
-      <enclosure url="https://github.com/sonnylazuardi/color-copy-paste/releases/download/v2.0.0/color-copy-paste.sketchplugin.zip" sparkle:version="2.0.0"/>
-    </item>
-    <item>
-      <enclosure url="https://github.com/sonnylazuardi/color-copy-paste/releases/download/v1.0.0/color-copy-paste.sketchplugin.zip" sparkle:version="1.0.0"/>
-    </item>
   </channel>
 </rss>
