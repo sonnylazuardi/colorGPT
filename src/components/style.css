@@ -918,6 +918,10 @@ a {
   display: none;
 }
 
+.producthunt-wrap {
+  margin-bottom: 16px;
+}
+
 @media only screen and (max-width: 780px) {
   html {
     font-size: 100%;

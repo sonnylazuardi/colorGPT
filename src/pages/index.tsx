@@ -68,16 +68,19 @@ const IndexPage = () => {
   const canvasRef = React.useRef(null)
   const sliderRef = React.useRef(null)
 
+  const renderCanvas = () => {
+    const canvas = canvasRef.current
+    var context = canvas.getContext("2d")
+    canvas.width = 1080
+    canvas.height = 152
+    context.drawImage(sliderRef.current, 0, 0, 1080, 152)
+  }
+
   React.useEffect(() => {
     controls.start({ x: 720 }, { damping: 300 })
     controlSlider.start({ x: -800 }, { damping: 300 })
-    setTimeout(() => {
-      const canvas = canvasRef.current
-      var context = canvas.getContext("2d")
-      canvas.width = 1080
-      canvas.height = 152
-      context.drawImage(sliderRef.current, 0, 0, 1080, 152)
-    }, 1500)
+    setTimeout(() => renderCanvas(), 500)
+    setTimeout(() => renderCanvas(), 1500)
   }, [])
 
   return (
@@ -136,13 +139,7 @@ const IndexPage = () => {
           src={BgSlider}
           ref={sliderRef}
           style={{ width: 1080, height: 152, display: "none" }}
-          onLoad={() => {
-            const canvas = canvasRef.current
-            var context = canvas.getContext("2d")
-            canvas.width = 1080
-            canvas.height = 152
-            context.drawImage(sliderRef.current, 0, 0, 1080, 152)
-          }}
+          onLoad={() => renderCanvas()}
         />
         <canvas ref={canvasRef} style={{ display: "none" }}></canvas>
         <img src={BgStatic} className="content-static" />
@@ -504,12 +501,28 @@ const IndexPage = () => {
           This project was built for fun and to explore what’s possible with
           design plugin. If you like this app, give me a{" "}
           <a href="https://twitter.com/sonnylazuardi">follow on twitter</a>, an
-          upvote in <a href="https://twitter.com/sonnylazuardi">Product Hunt</a>{" "}
+          upvote in{" "}
+          <a href="https://www.producthunt.com/posts/color-copy-paste">
+            Product Hunt
+          </a>{" "}
           or star on{" "}
           <a href="https://github.com/sonnylazuardi/color-copy-paste">github</a>
           . We built this to give back 😍 to the design community.
         </div>
-        <div className="ph-wrap"></div>
+        <div className="producthunt-wrap">
+          <a
+            href="https://www.producthunt.com/posts/color-copy-paste?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-color-copy-paste"
+            target="_blank"
+          >
+            <img
+              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=205039&theme=dark"
+              alt="Color Copy Paste - Colour copy paste from phone's camera to web, figma & sketch | Product Hunt Embed"
+              style={{ width: 250, height: 54 }}
+              width="250px"
+              height="54px"
+            />
+          </a>
+        </div>
         <div className="footer">
           Built by{" "}
           <a href="https://twitter.com/sonnylazuardi">@sonnylazuardi</a> in
