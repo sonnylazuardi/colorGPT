@@ -11,7 +11,7 @@ import IconBrowser from "../images/icon-browser.png"
 import BgStatic from "../images/bgstatic.jpg"
 import Hand from "../images/hand.png"
 import BgDesk from "../images/bgdesk.jpg"
-import BgSlider from "../images/bgslider.png"
+import BgSlider from "../images/bgslider.jpg"
 import avatar1 from "../images/avatar-1.png"
 import avatar2 from "../images/avatar-2.png"
 import avatar3 from "../images/avatar-3.png"
@@ -71,7 +71,15 @@ const IndexPage = () => {
   React.useEffect(() => {
     controls.start({ x: 720 }, { damping: 300 })
     controlSlider.start({ x: -800 }, { damping: 300 })
+    setTimeout(() => {
+      const canvas = canvasRef.current
+      var context = canvas.getContext("2d")
+      canvas.width = 1080
+      canvas.height = 152
+      context.drawImage(sliderRef.current, 0, 0, 1080, 152)
+    }, 1500)
   }, [])
+
   return (
     <>
       <SEO title="Color Copy Paste" />
