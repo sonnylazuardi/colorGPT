@@ -104,13 +104,10 @@ body {
 }
 
 .grid {
-  display: flex;
-  flex: 1;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  width: 100%;
   margin-bottom: 100px;
 }
 
@@ -119,7 +116,7 @@ body {
   height: 42px;
   background-color: yellow;
   border-radius: 6px;
-  margin: 8px;
+  margin: 8px auto;
   position: relative;
   cursor: pointer;
 }
