@@ -948,5 +948,6 @@ a {
   }
   .card {
     width: 100%;
+    margin-bottom: 24px;
   }
 }
