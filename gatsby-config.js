@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Color Copy Paste`,
+    description: `Cross-platform colour copy paste from phone's camera to web, figma and sketch plugin`,
+    author: `@sonnylazuardi`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
