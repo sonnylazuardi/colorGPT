@@ -647,7 +647,7 @@ pre tt:after {
   margin-bottom: 24px;
 }
 
-.button {
+.button-web {
   border: none;
   background-color: #404040;
   display: flex;
@@ -663,7 +663,7 @@ pre tt:after {
   margin-bottom: 10px;
 }
 
-.button:hover {
+.button-web:hover {
   transform: scale(1.03);
   transition: ease-in-out 0.1s;
 }
@@ -684,7 +684,7 @@ pre tt:after {
   margin-right: 24px;
 }
 
-.content {
+.content-default {
   position: relative;
   cursor: ew-resize;
 }
@@ -922,8 +922,14 @@ a {
   html {
     font-size: 100%;
   }
-  .content {
+  .content-default {
     display: none;
+  }
+  .footer-caption {
+    padding: 0 24px;
+  }
+  .footer {
+    padding: 0 60px;
   }
   .content-static {
     display: flex;
@@ -932,5 +938,11 @@ a {
   }
   .column-two {
     margin-top: -60px;
+  }
+  .column {
+    padding: 0;
+  }
+  .card {
+    width: 100%;
   }
 }

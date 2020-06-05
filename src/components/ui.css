@@ -26,6 +26,7 @@ body {
   flex: 1;
   height: 40px;
   justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 .button-back {

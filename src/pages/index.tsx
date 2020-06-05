@@ -105,19 +105,19 @@ const IndexPage = () => {
               </div>
               <a
                 href="https://www.figma.com/community/plugin/845733021314534317/Camera-Color-Copy-Paste"
-                className="button button-blue"
+                className="button-web button-blue"
               >
                 <img className="button-icon" src={IconFigma} />
                 Figma Plugin
               </a>
               <a
                 href="https://github.com/sonnylazuardi/color-copy-paste/releases/download/v1.2.0/color-copy-paste.sketchplugin.zip"
-                className="button button-yellow"
+                className="button-web button-yellow"
               >
                 <img className="button-icon" src={IconSketch} />
                 Sketch Plugin
               </a>
-              <Link to="app" className="button button-yellow">
+              <Link to="app" className="button-web button-yellow">
                 <img className="button-icon" src={IconBrowser} />
                 Web Browser
               </Link>
@@ -139,7 +139,7 @@ const IndexPage = () => {
         <canvas ref={canvasRef} style={{ display: "none" }}></canvas>
         <img src={BgStatic} className="content-static" />
         <motion.div
-          className="content"
+          className="content-default"
           onMouseMove={e => {
             function getElementOffset(element) {
               var de = document.documentElement
