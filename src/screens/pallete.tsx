@@ -1,40 +1,38 @@
-import * as React from "react";
+import * as React from "react"
 
-declare function require(path: string): any;
+declare function require(path: string): any
 
-const { Tip, Button } = require("react-figma-plugin-ds");
-const { AnimatePresence, motion } = require("framer-motion");
+const { Tip, Button } = require("react-figma-plugin-ds")
+const { AnimatePresence, motion } = require("framer-motion")
 
 function copyTextToClipboard(text: string) {
-  var textArea = document.createElement("textarea");
-  textArea.value = text;
+  var textArea = document.createElement("textarea")
+  textArea.value = text
 
   // Avoid scrolling to bottom
-  textArea.style.top = "0";
-  textArea.style.left = "0";
-  textArea.style.position = "fixed";
+  textArea.style.top = "0"
+  textArea.style.left = "0"
+  textArea.style.position = "fixed"
 
-  document.body.appendChild(textArea);
-  textArea.focus();
-  textArea.select();
+  document.body.appendChild(textArea)
+  textArea.focus()
+  textArea.select()
 
   try {
-    var successful = document.execCommand("copy");
-    var msg = successful ? "successful" : "unsuccessful";
-    console.log("Fallback: Copying text command was " + msg);
+    var successful = document.execCommand("copy")
+    var msg = successful ? "successful" : "unsuccessful"
+    console.log("Fallback: Copying text command was " + msg)
   } catch (err) {
-    console.error("Fallback: Oops, unable to copy", err);
+    console.error("Fallback: Oops, unable to copy", err)
   }
 
-  document.body.removeChild(textArea);
+  document.body.removeChild(textArea)
 }
 
 const Pallete = (props: any) => {
   return (
     <div className="content">
-      <Tip iconName="import">
-        Click color to copy, click Add to design to create color frames
-      </Tip>
+      <Tip iconName="import">Click color to copy to clipboard</Tip>
 
       <div className="grid">
         <AnimatePresence>
@@ -48,34 +46,25 @@ const Pallete = (props: any) => {
                 exit={{ scale: 0 }}
                 style={{ backgroundColor: item.color }}
                 onClick={() => {
-                  copyTextToClipboard(item.color);
-                  if (window.postMessage) {
-                    window.postMessage("notify", `Color ${item.color} copied!`);
-                  }
+                  copyTextToClipboard(item.color)
                 }}
               >
                 <div
                   className="remove"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
+                  onClick={e => {
+                    e.preventDefault()
+                    e.stopPropagation()
                     const newColors = props.colors.filter(
                       (filterItem: any) => filterItem.color !== item.color
-                    );
-                    props.setColors(newColors);
-                    if (window.postMessage) {
-                      localStorage.setItem("colors", JSON.stringify(newColors));
-                      window.postMessage(
-                        "notify",
-                        `Color ${item.color} removed!`
-                      );
-                    }
+                    )
+                    props.setColors(newColors)
+                    localStorage.setItem("colors", JSON.stringify(newColors))
                   }}
                 >
                   x
                 </div>
               </motion.div>
-            );
+            )
           })}
         </AnimatePresence>
       </div>
@@ -86,27 +75,15 @@ const Pallete = (props: any) => {
             isSecondary={true}
             className="button"
             onClick={async () => {
-              props.setCurrentPage("home");
+              props.setCurrentPage("home")
             }}
           >
             Open Camera
           </Button>
-          <div className="separator" />
-          <Button
-            className="button"
-            onClick={async () => {
-              if (window.postMessage) {
-                console.log("ADD DESIGN");
-                window.postMessage("addDesign", JSON.stringify(props.colors));
-              }
-            }}
-          >
-            Add to Design
-          </Button>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Pallete;
+export default Pallete

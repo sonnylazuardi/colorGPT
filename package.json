@@ -1,62 +1,49 @@
 {
-  "name": "color-copy-paste",
-  "version": "1.2.0",
-  "engines": {
-    "sketch": ">=3.0"
-  },
-  "skpm": {
-    "name": "Color Copy Paste",
-    "manifest": "src/manifest.json",
-    "main": "color-copy-paste.sketchplugin",
-    "assets": [
-      "assets/**/*"
-    ],
-    "sketch-assets-file": "sketch-assets/icons.sketch"
-  },
-  "scripts": {
-    "dev": "sh scripts/dev.sh",
-    "build": "sh scripts/build.sh",
-    "clean": "sh scripts/clean.sh"
+  "name": "gatsby-starter-default",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "dependencies": {
+    "framer-motion": "^1.11.0",
+    "gatsby": "^2.21.37",
+    "gatsby-image": "^2.4.4",
+    "gatsby-plugin-manifest": "^2.4.5",
+    "gatsby-plugin-offline": "^3.2.3",
+    "gatsby-plugin-react-helmet": "^3.3.1",
+    "gatsby-plugin-sharp": "^2.6.4",
+    "gatsby-plugin-twitter": "^2.3.3",
+    "gatsby-source-filesystem": "^2.3.4",
+    "gatsby-transformer-sharp": "^2.5.2",
+    "prop-types": "^15.7.2",
+    "qrcode.react": "^1.0.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-figma-plugin-ds": "^1.0.3",
+    "react-helmet": "^6.0.0",
+    "socket.io-client": "^2.3.0"
   },
   "devDependencies": {
-    "@skpm/builder": "^0.5.11",
-    "@skpm/extract-loader": "^2.0.2",
-    "css-loader": "^1.0.0",
-    "html-loader": "^0.5.1"
+    "prettier": "2.0.5"
   },
-  "resources": [
-    "resources/**/*.js"
+  "keywords": [
+    "gatsby"
   ],
-  "dependencies": {
-    "@types/jest": "^24.0.12",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.8.16",
-    "@types/react-dom": "^16.8.4",
-    "@types/react-router-dom": "^4.3.3",
-    "framer-motion": "^1.11.0",
-    "qrcode.react": "^1.0.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-figma-plugin-ds": "^1.0.3",
-    "react-router-dom": "^5.0.0",
-    "react-scripts": "^3.0.0",
-    "sketch-module-web-view": "3.4.1",
-    "socket.io-client": "^2.3.0",
-    "typescript": "^3.4.5"
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
-  "repository": "https://github.com/sonnylazuardi/color-copy-paste",
-  "author": "Sonny Lazuardi Hermawan <sonnylazuardi@gmail.com>",
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   },
-  "homepage": "."
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
 }

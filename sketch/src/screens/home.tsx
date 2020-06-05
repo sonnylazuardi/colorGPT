@@ -1,13 +1,13 @@
-import * as React from "react"
+import * as React from "react";
 
-declare function require(path: string): any
+declare function require(path: string): any;
 
-const { Tip, Button } = require("react-figma-plugin-ds")
+const { Tip, Button } = require("react-figma-plugin-ds");
 
-const QRCode = require("qrcode.react")
+const QRCode = require("qrcode.react");
 
 const Home = (props: any) => {
-  const url = `https://copy-paste-color.netlify.app?user=${props.userId}`
+  const url = `https://copy-paste-color.netlify.app?user=${props.userId}`;
 
   return (
     <div className="content">
@@ -16,7 +16,7 @@ const Home = (props: any) => {
       <div
         className="flex"
         onClick={() => {
-          props.onTap && props.onTap()
+          props.onTap && props.onTap();
         }}
       >
         <QRCode value={url} size={200} />
@@ -27,7 +27,9 @@ const Home = (props: any) => {
           <Button
             className="button"
             onClick={async () => {
-              window.open(url)
+              if (window.postMessage) {
+                window.postMessage("openWebUrl", url);
+              }
             }}
           >
             Open in Browser
@@ -37,7 +39,7 @@ const Home = (props: any) => {
             isSecondary={true}
             className="button"
             onClick={() => {
-              props.setCurrentPage("pallete")
+              props.setCurrentPage("pallete");
             }}
           >
             Open Pallete
@@ -45,7 +47,7 @@ const Home = (props: any) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

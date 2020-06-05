@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  background-color: #181818;
+}
+.page-outer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page-wrap {
+  width: 340px;
+  height: 400px;
+  background-color: white;
+  border-radius: 20px;
+}
+.content {
+  padding: 8px;
+}
+.title {
+  text-align: center;
+}
+.button {
+  display: flex;
+  flex: 1;
+  height: 40px;
+  justify-content: center;
+  cursor: pointer;
+}
+.button-back {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  flex: 0;
+  padding: 3px;
+}
+.logo {
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+.actions {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  display: flex;
+  background-color: white;
+}
+.input {
+  width: 100%;
+  border: 1px solid #ddd;
+  display: inline-block;
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.input-license {
+  width: 100%;
+  border: 1px solid #ddd;
+  margin: 0 8px;
+  padding: 8px;
+}
+.range {
+  margin-left: 8px;
+  width: 176px;
+}
+
+.icon-row {
+  display: inline-block;
+}
+
+.action-row {
+  display: flex;
+  flex: 1;
+}
+
+.separator {
+  width: 16px;
+}
+
+.row {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.row-click {
+  display: flex;
+}
+.panel {
+  padding: 16px 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.flex {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.grid {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start;
+  margin-bottom: 100px;
+}
+
+.color {
+  width: 42px;
+  height: 42px;
+  background-color: yellow;
+  border-radius: 6px;
+  margin: 8px;
+  position: relative;
+  cursor: pointer;
+}
+
+.remove {
+  width: 16px;
+  height: 16px;
+  font-family: "inter";
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  border-radius: 8px;
+  font-size: 9px;
+  display: none;
+  cursor: pointer;
+}
+
+.color:hover .remove {
+  display: flex;
+}
