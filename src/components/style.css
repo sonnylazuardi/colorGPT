@@ -723,7 +723,7 @@ pre tt:after {
   left: 100px;
   top: 100px;
   width: 320px;
-  height: 240px;
+  height: 245px;
   background-color: white;
   border-radius: 20px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
@@ -779,14 +779,10 @@ pre tt:after {
   bottom: -16px;
 }
 .grid {
-  display: flex;
-  flex: 1;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-content: flex-start;
-  margin-bottom: 100px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  width: 100%;
   padding: 6px;
 }
 
@@ -795,7 +791,7 @@ pre tt:after {
   height: 42px;
   background-color: #dddddd;
   border-radius: 6px;
-  margin: 8px;
+  margin: 8px auto;
   position: relative;
   cursor: pointer;
 }
