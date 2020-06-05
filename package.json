@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "color-copy-paste",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Cross-platform color copy paste from phone's camera to web browser, design plugins: figma, sketch",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Sonny Lazuardi <sonny.lazuardi@gmail.com>",
   "dependencies": {
     "framer-motion": "^1.11.0",
     "gatsby": "^2.21.37",
