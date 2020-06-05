@@ -3,7 +3,7 @@
   "private": true,
   "description": "Cross-platform color copy paste from phone's camera to web browser, design plugins: figma, sketch",
   "version": "0.1.0",
-  "author": "Sonny Lazuardi <sonny.lazuardi@gmail.com>",
+  "author": "Sonny Lazuardi <sonnylazuardi@gmail.com>",
   "dependencies": {
     "framer-motion": "^1.11.0",
     "gatsby": "^2.21.37",
