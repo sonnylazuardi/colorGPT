@@ -17,6 +17,12 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-twitter`,
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-64823953-2",
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
