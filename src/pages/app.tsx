@@ -92,10 +92,6 @@ const App = () => {
         })
       })
 
-      socket.on("join leave message", (data: any) => {
-        console.log("JOIN LEAVE", data)
-      })
-
       socket.on("connect_error", () => {
         setStatus(ERROR)
       })
