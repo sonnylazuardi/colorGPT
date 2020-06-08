@@ -10,7 +10,7 @@ declare function require(path: string): any
 const io = require("socket.io-client")
 
 const ROOM_NAME = "CopyPasteColor"
-const DEFAULT_SERVER_URL = "https://figma-chat.ph1p.dev/"
+const DEFAULT_SERVER_URL = "https://color-copy-paste-socket.herokuapp.com/"
 const INIT = "INIT"
 const CONNECTED = "CONNECTED"
 const ERROR = "ERROR"

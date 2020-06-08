@@ -69,11 +69,15 @@ const IndexPage = () => {
   const sliderRef = React.useRef(null)
 
   const renderCanvas = () => {
-    const canvas = canvasRef.current
-    var context = canvas.getContext("2d")
-    canvas.width = 1080
-    canvas.height = 152
-    context.drawImage(sliderRef.current, 0, 0, 1080, 152)
+    try {
+      const canvas = canvasRef.current
+      var context = canvas.getContext("2d")
+      canvas.width = 1080
+      canvas.height = 152
+      context.drawImage(sliderRef.current, 0, 0, 1080, 152)
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   React.useEffect(() => {
