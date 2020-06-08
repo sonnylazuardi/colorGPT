@@ -81,7 +81,7 @@ const App = () => {
 
         console.log("SOCKET ID", userId)
         socket.emit("set user", {
-          name: "figma-" + userId,
+          name: "web-" + userId,
           color: ``,
           url: DEFAULT_SERVER_URL,
         })
