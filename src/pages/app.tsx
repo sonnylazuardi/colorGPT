@@ -103,10 +103,6 @@ const App = () => {
       socket.on("reconnect_error", () => {
         setStatus(ERROR)
       })
-
-      socket.on("online", (data: any) => {
-        console.log("DATA", data)
-      })
     }
   }, [userId])
 
