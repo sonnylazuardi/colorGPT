@@ -515,12 +515,12 @@ const IndexPage = () => {
         </div>
         <div className="producthunt-wrap">
           <a
-            href="https://www.producthunt.com/posts/color-copy-paste?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-color-copy-paste"
+            href="https://www.producthunt.com/posts/color-copy-paste?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-color-copy-paste"
             target="_blank"
           >
             <img
-              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=205039&theme=dark"
-              alt="Color Copy Paste - Colour copy paste from phone's camera to web, figma & sketch | Product Hunt Embed"
+              src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=205039&theme=dark&period=daily"
+              alt="Color Copy Paste - Copy colors from your phone & paste on web, figma, or sketch | Product Hunt Embed"
               style={{ width: 250, height: 54 }}
               width="250px"
               height="54px"
