@@ -5,7 +5,7 @@ declare function require(path: string): any
 const { Tip, Button } = require("react-figma-plugin-ds")
 const { AnimatePresence, motion } = require("framer-motion")
 
-function copyTextToClipboard(text: string) {
+function copyTextToClipboard(text) {
   var textArea = document.createElement("textarea")
   textArea.value = text
 
@@ -29,44 +29,69 @@ function copyTextToClipboard(text: string) {
   document.body.removeChild(textArea)
 }
 
-const Pallete = (props: any) => {
+const Pallete = props => {
+  const [search, setSearch] = React.useState("")
+
   return (
     <div className="content">
-      <Tip iconName="import">Click color to copy to clipboard</Tip>
+      <div className="search-wrapper">
+        <input
+          type="text"
+          className="input input-search"
+          placeholder="Search color name"
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+        />
+      </div>
 
       <div className="grid">
-        <AnimatePresence>
-          {props.colors.map((item: any, i: number) => {
+        {props.colors
+          .filter(item => {
+            return item.name.toLowerCase().indexOf(search) !== -1
+          })
+          .map((item: any, i: number) => {
             return (
-              <motion.div
-                key={i}
-                className="color"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                exit={{ scale: 0 }}
-                style={{ backgroundColor: item.color }}
-                onClick={() => {
-                  copyTextToClipboard(item.color)
-                }}
-              >
+              <div key={i} className="color-box">
                 <div
-                  className="remove"
-                  onClick={e => {
-                    e.preventDefault()
-                    e.stopPropagation()
-                    const newColors = props.colors.filter(
-                      (filterItem: any) => filterItem.color !== item.color
-                    )
-                    props.setColors(newColors)
-                    localStorage.setItem("colors", JSON.stringify(newColors))
+                  className="color"
+                  style={{ backgroundColor: item.color }}
+                  onClick={() => {
+                    copyTextToClipboard(item.color)
                   }}
                 >
-                  x
+                  <div
+                    className="remove"
+                    onClick={e => {
+                      e.preventDefault()
+                      e.stopPropagation()
+                      const newColors = props.colors.filter(
+                        filterItem => filterItem.id !== item.id
+                      )
+                      props.setColors(newColors)
+                    }}
+                  >
+                    x
+                  </div>
                 </div>
-              </motion.div>
+                <div className="color-name">
+                  <input
+                    type="text"
+                    className="input"
+                    value={item.name}
+                    onChange={e => {
+                      const newColors = props.colors.map(v => {
+                        if (v.id === item.id) {
+                          return { ...v, name: e.target.value }
+                        } else return v
+                      })
+                      props.setColors(newColors)
+                      localStorage.setItem("colors", JSON.stringify(newColors))
+                    }}
+                  />
+                </div>
+              </div>
             )
           })}
-        </AnimatePresence>
       </div>
 
       <div className="actions">
@@ -79,6 +104,10 @@ const Pallete = (props: any) => {
             }}
           >
             Open Camera
+          </Button>
+          <div className="separator" />
+          <Button className="button" onClick={async () => {}}>
+            Add to Design
           </Button>
         </div>
       </div>

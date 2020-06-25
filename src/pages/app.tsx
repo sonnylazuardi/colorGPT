@@ -3,6 +3,8 @@ import Home from "../screens/home"
 import Pallete from "../screens/pallete"
 import "react-figma-plugin-ds/styles/figma-plugin-ds.min.css"
 import "../components/ui.css"
+import { findNearestColor } from "../utils/color"
+const debounce = require("lodash.debounce")
 
 declare function require(path: string): any
 
@@ -46,6 +48,11 @@ const App = () => {
   const [mySocket, setMySocket] = React.useState<any>(null)
   const [currentPage, setCurrentPage] = React.useState("home")
   const [colors, setColors] = React.useState([])
+  const colorRefValue = React.useRef(colors)
+
+  React.useEffect(() => {
+    colorRefValue.current = colors
+  }, [colors])
 
   console.log(status)
 
@@ -60,7 +67,13 @@ const App = () => {
       results = JSON.parse(colors)
     }
 
-    setColors(results)
+    const newColors = results.map(item => {
+      if (!item.name || item.name == "") {
+        const nearestColor = findNearestColor(item.color)
+        return { ...item, name: nearestColor.name }
+      } else return item
+    })
+    setColors(newColors)
   }, [])
 
   React.useEffect(() => {
@@ -104,18 +117,26 @@ const App = () => {
 
   React.useEffect(() => {
     if (mySocket) {
-      mySocket.on("chat message", (data: any) => {
-        if (data.user.name === userId) {
-          const newColor = { id: generateId(), color: data.message }
-          const newColors: any = [...colors, newColor]
-          setColors(newColors)
-          localStorage.setItem("colors", JSON.stringify(newColors))
+      mySocket.on(
+        "chat message",
+        debounce((data: any) => {
+          if (data.user.name === userId) {
+            const nearestColor = findNearestColor(data.message)
+            const newColor = {
+              id: generateId(),
+              color: data.message,
+              name: nearestColor.name,
+            }
+            const newColors: any = [...colorRefValue.current, newColor]
+            setColors(newColors)
+            localStorage.setItem("colors", JSON.stringify(newColors))
 
-          setCurrentPage("pallete")
-        }
-      })
+            setCurrentPage("pallete")
+          }
+        }, 500)
+      )
     }
-  }, [mySocket, colors, userId])
+  }, [mySocket, userId])
 
   console.log(userId)
 

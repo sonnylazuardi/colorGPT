@@ -778,7 +778,7 @@ pre tt:after {
   left: -80px;
   bottom: -16px;
 }
-.grid {
+.grid-demo {
   display: flex;
   flex: 1;
   justify-content: flex-start;
@@ -790,7 +790,7 @@ pre tt:after {
   padding: 6px;
 }
 
-.color {
+.color-demo {
   width: 42px;
   height: 42px;
   background-color: #dddddd;

@@ -14,6 +14,8 @@ body {
   height: 400px;
   background-color: white;
   border-radius: 20px;
+  overflow: hidden;
+  overflow-y: auto;
 }
 .content {
   padding: 8px;
@@ -55,8 +57,19 @@ body {
   border: 1px solid #ddd;
   display: inline-block;
   text-align: center;
-  margin-top: 16px;
-  margin-bottom: 16px;
+}
+.input-search {
+  text-align: left;
+}
+.search-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 9999999999;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 .input-license {
   width: 100%;
@@ -112,16 +125,28 @@ body {
   flex-direction: row;
   align-content: flex-start;
   margin-bottom: 100px;
+  padding-top: 32px;
 }
 
 .color {
-  width: 42px;
-  height: 42px;
-  background-color: yellow;
+  width: 48px;
+  height: 48px;
   border-radius: 6px;
-  margin: 8px;
-  position: relative;
   cursor: pointer;
+  position: relative;
+}
+
+.color-box {
+  margin: 8px;
+  width: 86px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.color-input {
+  height: 28px;
 }
 
 .remove {

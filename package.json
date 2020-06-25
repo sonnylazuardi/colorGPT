@@ -16,6 +16,7 @@
     "gatsby-plugin-twitter": "^2.3.3",
     "gatsby-source-filesystem": "^2.3.4",
     "gatsby-transformer-sharp": "^2.5.2",
+    "lodash.debounce": "^4.0.8",
     "prop-types": "^15.7.2",
     "qrcode.react": "^1.0.0",
     "react": "^16.12.0",

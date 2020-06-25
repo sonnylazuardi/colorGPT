@@ -217,12 +217,12 @@ const IndexPage = () => {
             {colors.length > 0 ? (
               <AnimatePresence>
                  
-                <div className="grid">
+                <div className="grid-demo">
                   {colors.map((item: any, i: number) => {
                     return (
                       <motion.div
                         key={i}
-                        className="color"
+                        className="color-demo"
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         exit={{ scale: 0 }}
