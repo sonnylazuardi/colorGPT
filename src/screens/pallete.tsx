@@ -111,10 +111,6 @@ const Pallete = props => {
           >
             Open Camera
           </Button>
-          <div className="separator" />
-          <Button className="button" onClick={async () => {}}>
-            Add to Design
-          </Button>
         </div>
       </div>
     </div>
