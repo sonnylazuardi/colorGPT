@@ -44,55 +44,60 @@ const Pallete = props => {
         />
       </div>
 
-      <div className="grid">
-        {props.colors
-          .filter(item => {
-            return item.name.toLowerCase().indexOf(search) !== -1
-          })
-          .map((item: any, i: number) => {
-            return (
-              <div key={i} className="color-box">
-                <div
-                  className="color"
-                  style={{ backgroundColor: item.color }}
-                  onClick={() => {
-                    copyTextToClipboard(item.color)
-                  }}
-                >
+      <div className="grid-wrapper">
+        <div className="grid">
+          {props.colors
+            .filter(item => {
+              return item.name.toLowerCase().indexOf(search) !== -1
+            })
+            .map((item: any, i: number) => {
+              return (
+                <div key={i} className="color-box">
                   <div
-                    className="remove"
-                    onClick={e => {
-                      e.preventDefault()
-                      e.stopPropagation()
-                      const newColors = props.colors.filter(
-                        filterItem => filterItem.id !== item.id
-                      )
-                      props.setColors(newColors)
+                    className="color"
+                    style={{ backgroundColor: item.color }}
+                    onClick={() => {
+                      copyTextToClipboard(item.color)
                     }}
                   >
-                    x
+                    <div
+                      className="remove"
+                      onClick={e => {
+                        e.preventDefault()
+                        e.stopPropagation()
+                        const newColors = props.colors.filter(
+                          filterItem => filterItem.id !== item.id
+                        )
+                        props.setColors(newColors)
+                      }}
+                    >
+                      x
+                    </div>
+                    <div className="color-popup">{item.color}</div>
                   </div>
-                  <div className="color-popup">{item.color}</div>
+                  <div className="color-name">
+                    <input
+                      type="text"
+                      className="input input-name"
+                      value={item.name}
+                      onChange={e => {
+                        const newColors = props.colors.map(v => {
+                          if (v.id === item.id) {
+                            return { ...v, name: e.target.value }
+                          } else return v
+                        })
+                        props.setColors(newColors)
+                        localStorage.setItem(
+                          "colors",
+                          JSON.stringify(newColors)
+                        )
+                      }}
+                    />
+                  </div>
                 </div>
-                <div className="color-name">
-                  <input
-                    type="text"
-                    className="input input-name"
-                    value={item.name}
-                    onChange={e => {
-                      const newColors = props.colors.map(v => {
-                        if (v.id === item.id) {
-                          return { ...v, name: e.target.value }
-                        } else return v
-                      })
-                      props.setColors(newColors)
-                      localStorage.setItem("colors", JSON.stringify(newColors))
-                    }}
-                  />
-                </div>
-              </div>
-            )
-          })}
+              )
+            })}
+        </div>
       </div>
 
       <div className="actions">

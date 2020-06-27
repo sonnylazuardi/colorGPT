@@ -11,11 +11,11 @@ body {
 }
 .page-wrap {
   width: 340px;
-  height: 400px;
+  height: 500px;
   background-color: white;
   border-radius: 20px;
+  position: relative;
   overflow: hidden;
-  overflow-y: auto;
 }
 .content {
   padding: 8px;
@@ -44,7 +44,7 @@ body {
   margin-bottom: 16px;
 }
 .actions {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
@@ -62,7 +62,7 @@ body {
   text-align: left;
 }
 .search-wrapper {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -125,6 +125,14 @@ body {
   flex-direction: row;
   align-content: flex-start;
   margin-bottom: 100px;
+}
+
+.grid-wrapper {
+  height: 500px;
+  padding-top: 32px;
+  overflow: hidden;
+  overflow-y: auto;
+  background: transparent;
 }
 
 .color {
