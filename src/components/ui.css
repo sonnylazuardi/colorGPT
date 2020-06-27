@@ -125,7 +125,6 @@ body {
   flex-direction: row;
   align-content: flex-start;
   margin-bottom: 100px;
-  padding-top: 32px;
 }
 
 .color {
@@ -167,6 +166,29 @@ body {
   cursor: pointer;
 }
 
+.color-popup {
+  margin-top: 10px;
+  font-family: "inter";
+  background-color: rgba(255, 255, 255, 0.3);
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 9px;
+  font-weight: bold;
+  display: none;
+  cursor: pointer;
+}
+
 .color:hover .remove {
   display: flex;
+}
+
+.color:hover .color-popup {
+  display: flex;
+}
+
+.input-name {
+  border: none;
 }

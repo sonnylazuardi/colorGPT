@@ -72,11 +72,12 @@ const Pallete = props => {
                   >
                     x
                   </div>
+                  <div className="color-popup">{item.color}</div>
                 </div>
                 <div className="color-name">
                   <input
                     type="text"
-                    className="input"
+                    className="input input-name"
                     value={item.name}
                     onChange={e => {
                       const newColors = props.colors.map(v => {
