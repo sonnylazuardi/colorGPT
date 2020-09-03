@@ -126,7 +126,7 @@ const IndexPage = () => {
                 Figma Plugin
               </a>
               <a
-                href="https://github.com/sonnylazuardi/color-copy-paste/releases/download/v1.2.0/color-copy-paste.sketchplugin.zip"
+                href="color-copy-paste.sketchplugin.zip"
                 className="button-web button-yellow"
               >
                 <img className="button-icon" src={IconSketch} />
