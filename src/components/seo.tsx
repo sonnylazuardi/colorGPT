@@ -70,6 +70,7 @@ function SEO({ description, lang, meta, title }) {
       ].concat(meta)}
     >
       <script async defer src="https://buttons.github.io/buttons.js"></script>
+      <link rel="icon" href="https://fav.farm/🎨" />
     </Helmet>
   )
 }
