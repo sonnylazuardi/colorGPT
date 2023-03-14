@@ -1,27 +1,36 @@
-# Next.js + Tailwind CSS Example
+# colorGPT
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+![screen](screen.png)
+
+## How it works
+
+It uses ChatGPT API to generate color name from color hex. By using web video API `navigator.getUserMedia`, we can capture color from real-world in real-time.
+
+## Running Locally
+
+Cloning the repository the local machine.
+git clone https://github.com/sonnylazuardi/colorgpt
+
+Creating a account on OpenAI to get an API key.
+Go to https://platform.openai.com to make an account.
+Copy your API Key and paste in the app.
+
+Installing the dependencies.
+
+```
+pnpm install
+```
+
+### Running the application.
+Then, run the application in the command line and it will be available at http://localhost:3000.
+
+```
+npm run dev
+```
 
 ## Deploy your own
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/sonnylazuardi/colorgpt)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/sonnylazuardi/colorgpt&project-name=colorgpt&repository-name=colorgpt)
 
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
