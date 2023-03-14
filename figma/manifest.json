@@ -1,7 +1,0 @@
-{
-  "name": "Camera Color Copy Paste",
-  "id": "845733021314534317",
-  "api": "1.0.0",
-  "main": "dist/code.js",
-  "ui": "dist/ui.html"
-}
