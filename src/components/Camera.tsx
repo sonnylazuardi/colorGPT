@@ -9,14 +9,10 @@ interface Props {
     facingMode: FacingMode,
     onTakePhoto: Function,
     onColor: Function,
+    paused?: boolean,
 }
 
 export default function CameraColorPick(props: Props) {
-    const {
-        facingMode,
-        onTakePhoto,
-        ...rest
-    } = props
     const [photoDataUri, setPhotoDataUri] = React.useState("")
 
     let video = React.useRef<HTMLVideoElement>()
@@ -27,7 +23,7 @@ export default function CameraColorPick(props: Props) {
         if (navigator.mediaDevices) startCamera()
 
         let timer = setInterval(() => {
-            if (props.onColor) {
+            if (props.onColor && !props.paused) {
                 props.onColor(getColorAt(video.current, 207, 368))
             }
         }, 375)
@@ -35,7 +31,7 @@ export default function CameraColorPick(props: Props) {
         return () => {
             clearInterval(timer)
         }
-    }, [])
+    }, [props.paused])
 
     function getColorAt(webcam: any, x: number, y: number) {
         // To be able to access pixel data from the webcam feed, we must first draw the current frame in
