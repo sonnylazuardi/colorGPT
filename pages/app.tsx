@@ -15,7 +15,7 @@ export const PASSKEY = "colorgpt";
 
 const App: NextPage = () => {
   const [apiKey, setApiKey] = useState("");
-  const [colorSet, setColorSet] = useState<ColorSet[]>([{color: 'test', hex: '#ff0000'},{color: 'test', hex: '#ff0000'}]);
+  const [colorSet, setColorSet] = useState<ColorSet[]>([]);
   const [showOnboard, setShowOnboard] = useState(false);
   const [showPicker, setShowPicker] = useState(false);
   const [color, setColor] = useState("#888888");
@@ -285,8 +285,9 @@ const App: NextPage = () => {
   return (
     <div className="w-full" style={{ height: "100vh" }}>
       <Head>
-        <title>ColorGPT</title>
+        <title>colorGPT</title>
         <link rel="icon" href="/favicon.ico" />
+        <script async defer src="https://analytics.umami.is/script.js" data-website-id="52141638-f113-4e05-b41b-05ad5ccf55c7"></script>
       </Head>
       {renderApp()}
       <Toaster />

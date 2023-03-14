@@ -8,6 +8,7 @@ const Home: NextPage = () => {
       <Head>
         <title>colorGPT</title>
         <link rel="icon" href="/favicon.ico" />
+        <script async defer src="https://analytics.umami.is/script.js" data-website-id="52141638-f113-4e05-b41b-05ad5ccf55c7"></script>
       </Head>
       <div className="flex flex-col max-w-screen-md mx-auto">
         <div className="w-full flex flex-row h-20 items-center justify-between p-4 md:p-0">
