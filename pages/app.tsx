@@ -110,7 +110,7 @@ const App: NextPage = () => {
           </div>
           <div className="mb-4">
             <input
-              placeholder="Your OpenAI API Key"
+              placeholder="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               className="border rounded-lg border-neutral-75 px-4 py-2 w-full text-black"
               onChange={(e) => setApiKey(e.target.value)}
               onKeyDown={(e: any) => {
