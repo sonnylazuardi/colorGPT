@@ -220,7 +220,7 @@ const App: NextPage = () => {
           </div>
         </div>
 
-        <div className="flex h-20 top-[10%] absolute w-full">
+        <div className="flex h-20 top-[14%] absolute w-full">
           <div className="flex mx-auto max-w-screen-sm w-full">
             <div className="flex p-4 overflow-y-hidden overflow-x-auto">
               <div className="flex flex-row items-center text-white pr-4">
