@@ -10,7 +10,7 @@ dotenv.config();
 const GPT35TurboMessage = (question: string) => [
   {
     role: "system",
-    content: `You're a designer give semantic color name from hex code. Answer with short name separated with comma sorted by accuracy first.`,
+    content: `You're a designer give the closest base color name from hex code. Answer with short and simple name.`,
   },
   {
     role: "user",
@@ -18,7 +18,7 @@ const GPT35TurboMessage = (question: string) => [
   },
   {
     role: "assistant",
-    content: "brown sugar, brown",
+    content: "brown",
   },
   { role: "user", content: `Color name of ${question} ?` },
 ];
