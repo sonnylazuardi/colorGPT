@@ -1,6 +1,6 @@
 # colorGPT
 
-![screen](screen.png)
+[![screen](screen.png)](https://twitter.com/sonnylazuardi/status/1634821365596299264)
 
 ## How it works
 
